@@ -10,7 +10,7 @@ public class LocalDateMain {
         System.out.println("오늘 날짜 = " + nowDate);
         System.out.println("지정 날짜 = " + ofDate);
 
-        //계산(불편
+        //계산(불변)
         LocalDate plusDays = ofDate.plusDays(10);
         System.out.println("지정날짜+10d = " + plusDays);
     }
