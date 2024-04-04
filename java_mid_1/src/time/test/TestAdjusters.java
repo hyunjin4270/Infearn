@@ -13,6 +13,7 @@ public class TestAdjusters {
         LocalDate localDate = LocalDate.of(year, month, 1);
         DayOfWeek firstDayOfWeek = localDate.getDayOfWeek();
         DayOfWeek lastDayOfWeek = localDate.with(TemporalAdjusters.lastDayOfMonth()).getDayOfWeek();
+        String string = lastDayOfWeek.toString();
         System.out.println("firstDayOfWeek = " + firstDayOfWeek);
         System.out.println("lastDayOfWeek = " + lastDayOfWeek);
         

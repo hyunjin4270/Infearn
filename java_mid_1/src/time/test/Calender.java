@@ -2,44 +2,80 @@ package time.test;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
 public class Calender {
 
     private Calender() {}
-    private int year;
-    private int month;
+    private static int year;
+    private static int month;
 
-    public void setMonth(int month) {
-        this.month = month;
+    public static void setMonth(int month1) {
+        month = month1;
     }
-    public int getMonth() {
+    public static int getMonth() {
         return month;
     }
-    public void setYear(int year) {
-        this.year = year;
+    public static void setYear(int year1) {
+        year = year1;
     }
-    public int getYear() {
+    public static int getYear() {
         return year;
     }
 
-    void setCalender(int year, int month) {
+    static void setCalender() {
         LocalDate localDate = LocalDate.of(year, month, 1);
         LocalDate localDate2 = localDate.with(TemporalAdjusters.lastDayOfMonth());
         System.out.println("Su Mo Tu We Th Fr Sa");
 
-        for (long i = 0; i < localDate2.getDayOfMonth(); i++) {
-            LocalDate plusDay = localDate.plusDays(i);
-            DayOfWeek calender = plusDay.getDayOfWeek();
-            String string = calender.toString();
+        
+        DayOfWeek startCalender = localDate.getDayOfWeek();
+        String string = startCalender.toString();
 
-            if (string.equals("localDate2")) {
-                
+        if (string.equals("SUNDAY")) {
+            System.out.print(" ");
+            System.out.print(localDate.getDayOfMonth());
+        } else if (string.equals("MONDAY")) {
+            System.out.print("    ");
+            System.out.print(localDate.getDayOfMonth());
+        } else if (string.equals("TUESDAY")) {
+            System.out.print("       ");
+            System.out.print(localDate.getDayOfMonth());
+        } else if (string.equals("WENDESDAY")) {
+            System.out.print("          ");
+            System.out.print(localDate.getDayOfMonth());
+        } else if (string.equals("THURSDAY")) {
+            System.out.print("             ");
+            System.out.print(localDate.getDayOfMonth());
+        } else if (string.equals("FRIDAY")) {
+            System.out.print("                ");
+            System.out.print(localDate.getDayOfMonth());
+        } else if (string.equals("SATURDAY")) {
+            System.out.print("                   ");
+            System.out.print(localDate.getDayOfMonth());
+            System.out.println();
+        }
+        
+            for (long i = 1; i < localDate2.getDayOfMonth(); i++) {
+                LocalDate plusDay = localDate.plusDays(i);
+                DayOfWeek nextCalender = plusDay.getDayOfWeek();
+                String string2 = nextCalender.toString();
+                if (string2.equals("SUNDAY") && plusDay.getDayOfMonth() > 9) {
+                    System.out.print(plusDay.getDayOfMonth());
+                } else if (string2.equals("SUNDAY") || plusDay.getDayOfMonth() > 9){
+                    System.out.print(" ");
+                    System.out.print(plusDay.getDayOfMonth());
+                } else {
+                    System.out.print("  ");
+                    System.out.print(plusDay.getDayOfMonth());
+                }
+    
+                if (string2.equals("SATURDAY")) {
+                    System.out.println();
+                    
+                }
             }
-            
         }
     }
     
-}
+
