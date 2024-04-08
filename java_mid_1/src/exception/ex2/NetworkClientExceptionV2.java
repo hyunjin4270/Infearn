@@ -1,0 +1,18 @@
+package exception.ex2;
+
+public class NetworkClientExceptionV2 extends Exception {
+
+    private String errorCode;
+
+    NetworkClientExceptionV2(String errorCode, String message) {
+        super(message);
+        this.errorCode = errorCode;
+    }
+
+    String getErrorCode() {
+        return errorCode;
+    }
+
+
+    
+}
