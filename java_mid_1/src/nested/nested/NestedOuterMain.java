@@ -7,7 +7,6 @@ public class NestedOuterMain {
         nested.print();
 
         System.out.println("nestedClass = " + nested.getClass());
-        
     }
 
     
