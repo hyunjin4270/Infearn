@@ -8,8 +8,6 @@ val = window.scrollY;
 
 val = window.location;
 
-val = window.location.href = 'http://google.com/';
+window.location.href = 'http://google.com/';
 
-
-
-console.log(val);
+console.log(val)
