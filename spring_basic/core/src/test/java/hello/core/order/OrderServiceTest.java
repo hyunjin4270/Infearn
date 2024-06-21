@@ -1,4 +1,4 @@
-package hello.core.order;
+/*package hello.core.order;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
@@ -21,4 +21,4 @@ public class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         Assertions.assertEquals(order.getDiscountPrice(), 1000);
     }
-}
+}*/

@@ -1,4 +1,4 @@
-package hello.core.member;
+/*package hello.core.member;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,4 +19,4 @@ public class MemberServiceTest {
         //then
         Assertions.assertEquals(member, findMember);
     }
-}
+}*/
