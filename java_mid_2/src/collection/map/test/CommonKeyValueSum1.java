@@ -12,5 +12,18 @@ public class CommonKeyValueSum1 {
         map2.put("C", 5);
         map2.put("D", 6);
         // 코드 작성
+        Map<String, Integer> resultMap = findCommonKeyValueSum(map1, map2);
+        System.out.println(resultMap);
     }
+
+    private static Map<String, Integer> findCommonKeyValueSum(Map<String, Integer> map1, Map<String, Integer> map2) {
+        Map<String, Integer> resultMap = new HashMap<>();
+        for (String key : map1.keySet()) {
+            if (map2.containsKey(key)) {
+                resultMap.put(key, map1.get(key) + map2.get(key));
+            }
+        }
+        return resultMap;
+    }
+
 }
