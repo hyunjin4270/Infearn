@@ -3,11 +3,14 @@ import DiaryItem from "../components/DiaryItem";
 import "./DiaryList.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import usePageTitle from "../hooks/usePageTitle";
 
 
 const DiaryList = ({data}) => {
     const [sortType, setSortType] = useState("latest");
     const navigate = useNavigate();
+
+    usePageTitle("감정 일기장");
 
     const onChangeSortType = (e) => {
         setSortType(e.target.value);
